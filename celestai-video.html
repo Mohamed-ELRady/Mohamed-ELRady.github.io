@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101419">
+  <meta name="description" content="Watch the 30-second CelestAI project video by Mohamed ELRady.">
+  <title>CelestAI video | Mohamed ELRady</title>
+  <link rel="icon" href="assets/favicon.svg?v=electric-black" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: dark; font-family: Inter, sans-serif; background: #101419; color: #e8edf2; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; }
+    a { color: #8ddcd5; text-decoration: none; }
+    a:hover { color: #b4eee8; }
+    a:focus-visible, button:focus-visible, video:focus-visible { outline: 2px solid #8ddcd5; outline-offset: 5px; }
+    .shell { max-width: 1440px; margin: auto; padding: 28px clamp(20px, 4vw, 64px) 64px; }
+    .topline { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-bottom: 1px solid #2b3742; padding-bottom: 22px; }
+    .back { font-size: 14px; font-weight: 600; }
+    .mark { color: #a8b4c1; font-family: Manrope, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: .04em; }
+    .mark span { color: #8ddcd5; }
+    .eyebrow { color: #8ddcd5; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 58px 0 14px; }
+    h1 { font-family: Manrope, sans-serif; font-size: clamp(36px, 5vw, 68px); letter-spacing: -.05em; line-height: 1.1; margin: 0 0 14px; }
+    .intro { margin: 0 0 30px; color: #a8b4c1; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.6; }
+    video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #080f1c; border: 1px solid #2b3742; border-radius: 16px; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 20px; }
+    button { border: 1px solid #8ddcd5; background: #8ddcd5; color: #101419; border-radius: 8px; min-height: 46px; padding: 10px 20px; font: 700 14px Inter, sans-serif; cursor: pointer; }
+    button:hover { background: #b4eee8; }
+    #playback-status { color: #a8b4c1; font-size: 14px; }
+    @media (max-width: 600px) { .shell { padding-top: 20px; } .eyebrow { margin-top: 38px; } video { border-radius: 8px; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topline"><a class="back" href="./#projects">← Back to projects</a><span class="mark">ME<span>.</span></span></div>
+    <p class="eyebrow">Featured project / Architecture × AI</p>
+    <h1>CelestAI in motion.</h1>
+    <p class="intro">A design brief becomes a measurable floor plan. Watch the 30-second project video.</p>
+    <video id="celestai-video" autoplay muted playsinline controls preload="auto" poster="assets/celestai-preview/celestai-apartment-120m2.svg" aria-label="CelestAI project video, 30 seconds">
+      <source src="assets/celestai-preview/celestai-showreel.mp4" type="video/mp4">
+      Your browser cannot play this video. <a href="assets/celestai-preview/celestai-showreel.mp4">Open the MP4</a>.
+    </video>
+    <div class="actions"><button id="sound-toggle" type="button">Turn on sound</button><span id="playback-status" role="status">The video plays automatically without sound. Use the button to hear it.</span></div>
+  </main>
+  <script>
+    const video = document.getElementById('celestai-video');
+    const soundToggle = document.getElementById('sound-toggle');
+    const status = document.getElementById('playback-status');
+
+    video.play().catch(() => {
+      status.textContent = 'Press play on the video to start watching.';
+    });
+
+    soundToggle.addEventListener('click', () => {
+      video.muted = !video.muted;
+      soundToggle.textContent = video.muted ? 'Turn on sound' : 'Mute sound';
+      status.textContent = video.muted ? 'Sound is off.' : 'Sound is on.';
+      if (video.paused) video.play().catch(() => {
+        status.textContent = 'Press play on the video to start watching.';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101419">
+  <meta name="description" content="Read and download Mohamed ELRady’s CV: AI engineering experience, projects, education, and technical skills.">
+  <title>Mohamed ELRady — CV</title>
+  <link rel="icon" href="assets/favicon.svg?v=electric-black" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=cv-original-colors">
+  <script src="cursor.js?v=1" defer></script>
+  <link rel="stylesheet" href="premium.css?v=4">
+</head>
+<body class="cv-document">
+  <a class="skip-link" href="#document-pages">Skip to CV</a>
+  <header class="document-toolbar">
+    <a class="document-back" href="./#cv"><span aria-hidden="true">←</span> Back to portfolio</a>
+    <div><h1>Mohamed ELRady</h1><p>CV · 2 pages</p></div>
+    <a class="button" href="assets/Mohamed-ELRady-CV.pdf" download="Mohamed-ELRady-CV.pdf">Download PDF <span aria-hidden="true">↓</span></a>
+  </header>
+  <main id="document-pages" class="document-pages" aria-label="Curriculum vitae">
+    <div class="document-controls"><label for="document-zoom">Page size <select id="document-zoom"><option value="fit">Fit to screen</option><option value="large">Larger text</option></select></label></div>
+    <div class="document-canvas" tabindex="0" role="region" aria-label="CV pages. Scroll to read both pages.">
+      <figure><img src="assets/cv/page-1.png" alt="CV page 1: contact information, summary, education, experience, and skills. Shown in the original PDF colors." width="1224" height="1584"><figcaption>Page 1 of 2</figcaption></figure>
+      <figure><img src="assets/cv/page-2.png" alt="CV page 2: projects, certificates, and languages. Shown in the original PDF colors." width="1224" height="1584" loading="lazy"><figcaption>Page 2 of 2</figcaption></figure>
+    </div>
+    <a class="document-back document-bottom" href="./#cv">← Back to portfolio</a>
+  </main>
+  <script>
+    document.querySelector('#document-zoom').addEventListener('change', function () {
+      document.querySelector('.document-canvas').classList.toggle('is-large', this.value === 'large');
+    });
+  </script>
+</body>
+</html>
